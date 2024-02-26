@@ -1,0 +1,430 @@
+﻿@page "/sleepapnea"
+@attribute [Authorize(Roles = "Patient")]
+@using System.ComponentModel.DataAnnotations
+@using System.Reflection;
+@inject NavigationManager nm
+
+
+<section class="bg-light min-vh-100 pt-5 pb-5">
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-lg-2">
+
+
+            <div>
+                <h3 class="display-6">Sleep Apnea</h3>
+                    <p class="lead">Please Answer the Following Questions</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <EditForm Model="@entExpertevaluation" OnValidSubmit="ValidSubmit">
+                        <DataAnnotationsValidator />
+
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.SnoreLoudly" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Do you snore loudly?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SnoreLoudly">Do you snore loudly?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.OftenFeelTired" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Do you often feel tired, sleepy or fatigued during the daytime ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.OftenFeelTired">Do you often feel tired, sleepy or fatigued during the daytime ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.StopBreating" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Has anyone observed you stop breating in your seelp ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.StopBreating">Has anyone observed you stop breating in your seelp ?</label>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.BloodPressure" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Do you have (or are you being treated for) high blood pressure ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.BloodPressure">Do you have (or are you being treated for) high blood pressure ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.WakeUp" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>How many times do you typically wake up during the nighttime ?</option>
+                                    <option value="0">0</option>
+                                    <option value="1-3">1-3</option>
+                                    <option value="Morethan 3">More than 3</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.WakeUp">How many times do you typically wake up during the nighttime ?</label>
+                            </div>
+
+                        </div>
+
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.SpendSleepTime" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>What position do you believe you spend most of your sleep time in ?</option>
+                                    <option value="Back">Back</option>
+                                    <option value="Side">Side</option>
+                                        <option value="Stomach">Stomach</option>
+                                    <option value="Recliner">Recliner</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SpendSleepTime">What position do you believe you spend most of your sleep time in ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.MorningHeadache" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Do you often wake up with a dry mouth or morning headache ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.MorningHeadache">Do you often wake up with a dry mouth or morning headache ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select" @bind-Value="entExpertevaluation.ScheduledUnscheduled" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Do you often take scheduled or unscheduled naps ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.ScheduledUnscheduled">Do you often take scheduled or unscheduled naps ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                    <InputSelect class="form-select" Value="entExpertevaluation.GainedWeight" ValueChanged="@((string val)=>WeightGained(val))" ValueExpression="@(()=>entExpertevaluation.GainedWeight)" id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Have you gained weight in last 3-5 years ?</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.ScheduledUnscheduled">Have you gained weight in last 3-5 years ?</label>
+                            </div>
+
+                        </div>
+                            <div class="mt-4">
+                                @if (IsWeightGained == true)
+                                {
+                                    <div class="form-floating">
+                                        <InputTextArea class="form-control" @bind-Value="entExpertevaluation.GainedWeight" style="min-height:150px" id="wg"></InputTextArea>
+                                        <label for="wg">Approximately how much?</label>
+                                    </div>
+                                }
+                            </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputTextArea class="form-control" @bind-Value="entExpertevaluation.AboutYourSleep" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></InputTextArea>
+                                <label for="floatingTextarea2">Is there anything else you would like to tell us about your sleep ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4 bg-light">
+                                <p class="lead p-3">What is you chance of dozing off or fall asleep in each of the following situations?</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.SittingAndReading"
+                                    
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Sitting and reading?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SittingAndReading">Sitting and reading?</label>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.SittingAndWatchingTV"
+                                        
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Sitting and watching TV?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SittingAndWatchingTV">Sitting and watching TV?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.AsaPassengerCar"
+                                           
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Sitting inactive in a public space ?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.AsaPassengerCar">Sitting inactive in a public space ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.SittingInactiveInPublic"
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>As a passenger in a car for one hour without a break ?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SittingInactiveInPublic">As a passenger in a car for one hour without a break ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.LyingDown"
+                                            
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Lying down to rest in the afternoon ?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.LyingDown">Lying down to rest in the afternoon ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.SittingTalking"
+                                            
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Sitting and talking to someone ?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SittingTalking">Sitting and talking to someone ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.SittingQuietfly"
+                                             
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>Sitting quietfly after lunch without alcohol ?</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.SittingQuietfly">Sitting quietfly after lunch without alcohol ?</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-4">
+                            <div class="form-floating">
+                                <InputSelect class="form-select"
+                                             @bind-Value="entExpertevaluation.WhileStopped"
+                                            
+                                             id="floatingSelect" aria-label="Floating label select example">
+                                    <option selected disabled>In a car, while stopped for a few minutes in traffic</option>
+                                    <option value="Never">Never</option>
+                                    <option value="Slight">Slight</option>
+                                    <option value="Moderate">Moderate</option>
+                                    <option value="High">High</option>
+                                </InputSelect>
+                                <label for="@entExpertevaluation.WhileStopped">In a car, while stopped for a few minutes in traffic</label>
+                            </div>
+
+                        </div>
+                        <div class="mt-3">
+                      <button type="submit" class="btn btn-primary btn-lg">Save and Next</button>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>
+</section>
+
+@code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationState { get; set; }
+    public EntSleepApnea? entExpertevaluation { get; set; } = new EntSleepApnea();
+    private string? uid { get; set; }
+     private bool IsWeightGained = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationState;
+        uid = authState.User.FindFirst("UserId")?.Value.ToString();
+
+    }
+    private void ValidSubmit()
+    {
+       
+        if (!string.IsNullOrEmpty(uid))
+        {
+            CalcualteEss();
+            entExpertevaluation.fk_UserId = uid.ToString();
+            int result = DalCRUD.SaveSleepApnea(entExpertevaluation);
+            if (result > 0)
+            {
+                if (ess >= 10)
+                {
+                    nm.NavigateTo("productsuggestion", true);
+                }
+                else
+                {
+                    nm.NavigateTo("suggestions", true);
+                }
+
+            }
+        }
+
+
+    }
+    private void WeightGained(string _val)
+    {
+        entExpertevaluation.GainedWeight = _val;
+        if (entExpertevaluation.GainedWeight == "Yes")
+        {
+
+            IsWeightGained = true;
+
+        }
+        else
+        {
+
+            IsWeightGained = false;
+        }
+
+    }
+
+    private int ess { get; set; }
+    //int i = 0;
+    private void CalcualteEss()
+    {
+     
+
+        Type objetype = entExpertevaluation.GetType();
+        PropertyInfo[] properties = objetype.GetProperties();
+
+        foreach (var item in properties)
+        {
+
+            object value = item.GetValue(entExpertevaluation, null);
+            string PropertyName = item.Name;
+            if (value != null)
+            {
+                if (PropertyName == "SittingAndReading")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "SittingAndWatchingTV")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "SittingInactiveInPublic")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "AsaPassengerCar")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "LyingDown")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "SittingTalking")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "SittingQuietfly")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+                else if (PropertyName == "WhileStopped")
+                {
+
+                    ess = ess + GetScore(value.ToString());
+                }
+
+            }
+        }
+
+
+    }
+    int GetScore(string choice)
+    {
+
+        if (choice == "Never")
+        {
+            return 0;
+        }
+        else if (choice == "Slight")
+        {
+
+            return 1;
+        }
+        else if (choice == "Moderate")
+        {
+
+            return 2;
+        }
+        else if(choice=="High")
+        {
+            return 3;
+        }
+        else
+        {
+            return 0;
+        }
+
+
+    }
+    
+}

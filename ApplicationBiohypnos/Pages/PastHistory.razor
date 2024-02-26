@@ -1,0 +1,334 @@
+﻿@page "/pasthistories"
+@attribute [Authorize(Roles = "Patient")]
+@inject NavigationManager nm;
+@using System.ComponentModel.DataAnnotations
+
+<section class="bg-light min-vh-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8  offset-lg-2 pb-5">
+                <div>
+                    <h3 class="display-6">Past History</h3>
+                    <p class="lead">Please Answer the Following Questions</p>
+                </div>
+                <EditForm Model="@entPastHistory" OnValidSubmit="OnvalidSubmission">
+
+                    <DataAnnotationsValidator />
+
+                    <div class="card pb-5">
+                        <div class="card-body">
+
+                            <p class="lead text-primary">Medical History</p>
+                            @entPastHistory.MedicalCondition
+
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                   @* <label for="history">Please Select Your Medical Condition</label>
+                                    @foreach (var option in options)
+                                    {
+                                        <div>
+                                            <InputCheckbox @bind-Value="option.Selected" />
+                                            <label>@option.Label</label>
+                                           
+                                        </div>
+                                    }*@
+                                  
+                                    <InputTextArea class="form-control" @bind-Value="entPastHistory.MedicalCondition" style="min-height:150px" id="mc"></InputTextArea>
+                                    <label for="mc">Please list any medical conditions you have, such as diabetes, hypertension, asthma, etc. </label>
+                                
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" Value="entPastHistory.PastSurgery" ValueChanged="@((string val)=>PastSurgery(val))" ValueExpression="@(()=>entPastHistory.PastSurgery)" id="ps" aria-label="Floating label select example">
+                                        <option selected disabled>Any surgery done in the past?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </InputSelect>
+                                    <label for="ps">Any surgery done in the past?</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                @if (IsPastSurgeries == true)
+                                {
+                                    <div class="form-floating">
+                                        <InputTextArea class="form-control" @bind-Value="entPastHistory.PastSurgeryDetails" style="min-height:150px" id="ts"></InputTextArea>
+                                        <label for="ts">please list any surgeries that you had in the past</label>
+                                    </div>
+
+                                }
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" @bind-Value="entPastHistory.Smoke" id="smok" aria-label="Floating label select example">
+                                        <option selected disabled>Do you Smoke ?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </InputSelect>
+                                    <label for="smok">Do you Smoke ? </label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" @bind-Value="entPastHistory.AlcoholUse" id="alo" aria-label="Floating label select example">
+                                        <option selected disabled>Any History of Alcohol Use?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </InputSelect>
+                                    <label for="alo">Any history of alcohol use?</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" Value="entPastHistory.IllegalDrugUse" ValueChanged="@((string val)=>IllegalDrugUse(val))" ValueExpression="@(()=>entPastHistory.IllegalDrugUse)" id="iil" aria-label="Floating label select example">
+                                        <option selected disabled>History of Illicit or Illegal Drug Use?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </InputSelect>
+                                    <label for="iil">History of illicit or illegal drug use?</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                @if (ISIllegalDrugUse == true)
+                                {
+                                    <div class="form-floating">
+                                        <InputTextArea class="form-control" @bind-Value="entPastHistory.DrugsCurrentlyUse" style="min-height:150px" id="dr"></InputTextArea>
+                                        <label for="dr">Please list any recreational drugs that you currently use? </label>
+                                    </div>
+                                }
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" Value="entPastHistory.FamilySleepDisorders" ValueChanged="@((string val)=>FamilySleepDisorders(val))" ValueExpression="@(()=>entPastHistory.FamilySleepDisorders)" id="sd" aria-label="Floating label select example">
+                                        <option selected disabled>Parents, siblings or children with history of any sleep disorders.</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </InputSelect>
+                                    <label for="sd">Parents, siblings or children with history of any sleep disorders? </label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                @if (ISFamilySleepDisorders == true)
+                                {
+                                    <div class="form-floating">
+                                        <InputTextArea class="form-control" @bind-Value="entPastHistory.FamilySleepDisorders" style="min-height:150px" id="sd"></InputTextArea>
+                                        <label for="sd">Please provide details about Parents, siblings or children with history of any sleep disorders</label>
+                                    </div>
+                                }
+                            </div>
+                            <div class="mt-4">
+                                <p class="lead mt-5 text-primary">Medication History</p>
+
+                            </div>
+                            <div class="mt-4">
+                                <div class="form-floating">
+                                    <InputTextArea class="form-control" @bind-Value="entPastHistory.Medications" style="min-height:150px" id="med"></InputTextArea>
+                                    <label for="med">Please list all the medications you take, prescription or non-prescription.</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" Value="entPastHistory.MedicationsAllergic" ValueChanged="@((string val)=>MedicationsAllergic(val))" ValueExpression="@(()=>entPastHistory.MedicationsAllergic)" id="alg" aria-label="Floating label select example">
+                                        <option selected disabled>Are you allergic to any medication?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+
+                                    </InputSelect>
+                                    <label for="alg">Are you allergic to any medication?</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-4">
+                                @if (IsMedicationsAllergic == true)
+                                {
+                                    <div class="form-floating">
+                                        <InputTextArea class="form-control" @bind-Value="entPastHistory.AllergicReactionTypes" style="min-height:150px" id="rt"></InputTextArea>
+                                        <label for="rt">If yes, please list the name and type of allergic reaction</label>
+                                    </div>
+                                }
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-primary btn-lg" type="submit" @onclick="OnvalidSubmission">Save History</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </EditForm>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+@code {
+    EntPastHistory entPastHistory = new EntPastHistory();
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationState { get; set; }
+    private string? uid { get; set; }
+    private bool IsPastSurgeries = false;
+    private bool ISIllegalDrugUse = false;
+    private bool IsMedicationsAllergic = false;
+    private bool ISFamilySleepDisorders = false;
+    private bool IsOthers = false;
+
+
+    private string? PastSurgeryDetails { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationState;
+        uid = authState.User.FindFirst("UserId")?.Value.ToString();
+
+    }
+
+    private void OnvalidSubmission()
+    {
+        if (!string.IsNullOrEmpty(uid))
+        {
+            entPastHistory.UserId = uid;
+            //entPastHistory.MedicalCondition = ListOfDeseas();
+            AddDetails();
+            int result = DalCRUD.SavePastHistory(entPastHistory);
+            if (result > 0)
+            {
+                nm.NavigateTo("/category");
+            }
+
+        }
+    }
+
+    private void PastSurgery(string _val)
+    {
+        entPastHistory.PastSurgery = _val;
+        if (entPastHistory.PastSurgery == "Yes")
+        {
+
+            IsPastSurgeries = true;
+
+        }
+        else
+        {
+
+            IsPastSurgeries = false;
+        }
+
+    }
+    private void IllegalDrugUse(string _val)
+    {
+        entPastHistory.IllegalDrugUse = _val;
+        if (entPastHistory.IllegalDrugUse == "Yes")
+        {
+            ISIllegalDrugUse = true;
+
+        }
+        else
+        {
+            ISIllegalDrugUse = false;
+        }
+
+    }
+    private void FamilySleepDisorders(string _val)
+    {
+        entPastHistory.FamilySleepDisorders = _val;
+        if (entPastHistory.FamilySleepDisorders == "Yes")
+        {
+            ISFamilySleepDisorders = true;
+
+        }
+        else
+        {
+            ISFamilySleepDisorders = false;
+        }
+
+    }
+
+    private void MedicationsAllergic(string _val)
+    {
+        entPastHistory.MedicationsAllergic = _val;
+        if (entPastHistory.MedicationsAllergic == "Yes")
+        {
+            IsMedicationsAllergic = true;
+
+        }
+        else
+        {
+            IsMedicationsAllergic = false;
+        }
+
+    }
+
+    private void AddDetails()
+    {
+        if (entPastHistory.PastSurgery == "No")
+        {
+            entPastHistory.PastSurgeryDetails = "No past surgery details";
+        }
+        if (entPastHistory.IllegalDrugUse == "No")
+        {
+            entPastHistory.DrugsCurrentlyUse = "No drugs currently in use";
+
+        }
+        if (entPastHistory.FamilySleepDisorders == "No")
+        {
+            entPastHistory.DrugsCurrentlyUse = "No family sleep disorder details available";
+
+        }
+        if (entPastHistory.MedicationsAllergic == "No")
+        {
+            entPastHistory.AllergicReactionTypes = "No allergic recation types";
+
+        }
+
+    }
+
+
+    public class Option
+    {
+        public string Label { get; set; }
+        public bool Selected { get; set; }
+    }
+
+    List<Option> options = new List<Option>
+    {
+        new Option { Label = "Diabetes" },
+        new Option { Label = "Hypertension" },
+        new Option { Label = "Asthma" },
+        new Option { Label = "Migraine" },
+        new Option { Label = "Arthritis" },
+        new Option { Label = "None" },
+        new Option { Label = "Others" }
+    };
+    
+    string selectedValuesString;
+
+    private string ListOfDeseas()
+    {
+        var selectedValues = options.Where(o => o.Selected).Select(o => o.Label);
+        string othersoptions = selectedValues.Where(x => x.StartsWith("Others")).ToString();
+        if (othersoptions == "Others")
+        {
+            othersoptions = "d1,d2";
+            selectedValuesString = string.Join(", ", selectedValues);
+        }
+       
+        return selectedValuesString;
+    }
+
+
+}

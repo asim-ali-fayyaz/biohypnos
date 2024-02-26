@@ -1,0 +1,161 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ApplicationBiohypnos
+build_property.RootNamespace = ApplicationBiohypnos
+build_property.ProjectDir = D:\WebProjects\Biohypons\ApplicationBiohypnos\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\WebProjects\Biohypons\ApplicationBiohypnos
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Auth/AuthorizingAnimation.razor]
+build_metadata.AdditionalFiles.TargetPath = QXV0aFxBdXRob3JpemluZ0FuaW1hdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Auth/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = QXV0aFxMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Auth/Registration.razor]
+build_metadata.AdditionalFiles.TargetPath = QXV0aFxSZWdpc3RyYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Demographic.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGVtb2dyYXBoaWMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Doctor/AdminMainPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yXEFkbWluTWFpblBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Doctor/PatientsInformation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yXFBhdGllbnRzSW5mb3JtYXRpb24ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Doctor/UserFeedback.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9jdG9yXFVzZXJGZWVkYmFjay5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/ExcessiveSleepiness.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXNzaXZlU2xlZXBpbmVzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/ExpertEvaluation.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhwZXJ0RXZhbHVhdGlvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Feedback.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmVlZGJhY2sucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/FetchData.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/LegMovements.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTGVnTW92ZW1lbnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/PastHistory.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFzdEhpc3RvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/PersonalProfile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGVyc29uYWxQcm9maWxlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Product.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/SleepApnea.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2xlZXBBcG5lYS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Suggestions.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3VnZ2VzdGlvbnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Thankyou.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhhbmt5b3UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Tobacco.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVG9iYWNjby5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Underage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVW5kZXJhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/YoutubeLink.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWW91dHViZUxpbmsucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/AdminLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEFkbWluTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/FooterComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEZvb3RlckNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/ProfileNavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFByb2ZpbGVOYXZNZW51LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/AuthLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEF1dGhMYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-hsal0bv9om
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-6mkfwel71h
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/NavAdmin.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdkFkbWluLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-jmojp00ua9
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-mhl92v2694
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WebProjects/Biohypons/ApplicationBiohypnos/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

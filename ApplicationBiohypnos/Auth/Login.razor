@@ -1,0 +1,83 @@
+﻿@page "/login"
+@layout AuthLayout
+@using System.ComponentModel.DataAnnotations
+@using ApplicationBiohypnos.Auth
+@inject NavigationManager nm
+
+@inject UserAccountService userAccountService
+@inject IJSRuntime js
+@inject AuthenticationStateProvider authStateProvider
+
+
+<section style="background-image:url(images/sleepapneaphoto.jpeg);
+background-position:center; background-size:cover; min-height:100vh">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 bg-white offset-lg-8">
+                <div class="d-flex min-vh-100 justify-content-center align-items-center">
+                    <EditForm Model="@model" OnSubmit="Authenticate">
+                        <DataAnnotationsValidator />
+                        <div class="card border-0">
+                            <div class="card-body text-center">
+                                <img src="/images/logo.png" width="200" />
+                                <h4 class="text-primary pt-5 mb-4 text-center">Sign in with Biohypnos</h4>
+                                <div class="form-floating mb-3">
+                                    <InputText type="email" class="form-control" id="floatingInput" placeholder="name@example.com" @bind-Value="model.Email"></InputText>
+                                    <label for="floatingInput">Email address</label>
+                                </div>
+                                <div class="form-floating">
+                                    <InputText type="password" class="form-control" id="floatingPassword" placeholder="Password" @bind-Value="model.Password"></InputText>
+                                    <label for="floatingPassword">Password</label>
+                                </div>
+                                <div class="mt-3 mb-3">
+                                    <a href="#" class="text-danger pt-5">Forget Password</a>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary form-control">Login</button>
+                                    </div>
+                                    <div class="col-md-12 mt-3 text-center">
+                                        <a href="registration" class="nav-link">Don't have an account yet? <span class="text-primary">Create new account</span> </a>
+                                    </div>
+                                </div>
+                                <p class="text-danger">@Message</p>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@code {
+    EntRegistration model = new EntRegistration();
+    EntRegistration? UserAccount { get; set; }
+
+    string? Message { get; set; }
+
+    private void CreateNew()
+    {
+        nm.NavigateTo("registration", true);
+    }
+
+    private async Task Authenticate()
+    {
+        UserAccount = userAccountService.GetByUserName(model);
+
+        if (UserAccount.LastName == null || UserAccount.UserId == null)
+        {
+            Message = "Invalid username or password";
+        }
+        else
+        {
+            var customAuthStateProvier = (CustomAuthenticationStateProvider)authStateProvider;
+            await customAuthStateProvier.UpdateAuthenticatinoState(new UserSession
+                {
+                    UserId = UserAccount.UserId,
+                    Username = UserAccount.LastName,
+                    Role = UserAccount.Role
+                });
+            nm.NavigateTo("/demographic", true);
+        }
+    }
+}

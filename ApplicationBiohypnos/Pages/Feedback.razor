@@ -1,0 +1,63 @@
+﻿@page "/feedback"
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager nm
+<div class="container mt-5 min-vh-100">
+    <div class="row">
+        <div class="col-md-8 offset-lg-2">
+            <h3 class="mb-5 fw-bold">Feedback form</h3>
+            <EditForm Model="entFeedBack" OnValidSubmit="SaveFeedBack">
+                <DataAnnotationsValidator />
+                <div class="card shadow-sm p-3 rounded-0">
+                    <div class="card-body">
+
+
+                        <table class="table">
+                            <tr>
+                                <td>
+                                    <label class="h5">Full Name</label>
+                                    <InputText PlaceHolder="Your full name" @bind-Value="entFeedBack.UserName" class="form-control mb-2"></InputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="h5">Email</label>
+                                    <InputText PlaceHolder="Your email address" @bind-Value="entFeedBack.Email" class="form-control mb-2"></InputText>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="h5">Message</label>
+                                    <InputTextArea PlaceHolder="what suggestions do you have?" @bind-Value="entFeedBack.Feedback" rows="10" class="form-control mb-2"></InputTextArea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button class="btn btn-primary">Send</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </EditForm>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    EntFeedBack entFeedBack = new EntFeedBack();
+
+    private void SaveFeedBack()
+    {
+        if (DalCRUD.SaveFeedBack(entFeedBack) > 0)
+        {
+            nm.NavigateTo("thankyou");
+        }
+        else
+        {
+            nm.NavigateTo("feedback");  
+        }
+    }
+
+
+}

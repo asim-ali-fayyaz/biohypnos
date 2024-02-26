@@ -1,0 +1,109 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\ApplicationBiohypnos.bundle.scp.css",
+      "PackagePath": "staticwebassets\\ApplicationBiohypnos.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\bootstrap\\popper.min.js",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\popper.min.js"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\loader.css",
+      "PackagePath": "staticwebassets\\css\\loader.css"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\images\\fd.jpg",
+      "PackagePath": "staticwebassets\\images\\fd.jpg"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\images\\logo.png",
+      "PackagePath": "staticwebassets\\images\\logo.png"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\images\\md.jpg",
+      "PackagePath": "staticwebassets\\images\\md.jpg"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\images\\sleep.jpeg",
+      "PackagePath": "staticwebassets\\images\\sleep.jpeg"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\images\\sleep2.jpeg",
+      "PackagePath": "staticwebassets\\images\\sleep2.jpeg"
+    },
+    {
+      "Id": "D:\\WebProjects\\Biohypons\\ApplicationBiohypnos\\wwwroot\\images\\sleepapneaphoto.jpeg",
+      "PackagePath": "staticwebassets\\images\\sleepapneaphoto.jpeg"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.ApplicationBiohypnos.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.build.ApplicationBiohypnos.props",
+      "PackagePath": "build\\ApplicationBiohypnos.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ApplicationBiohypnos.props",
+      "PackagePath": "buildMultiTargeting\\ApplicationBiohypnos.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildTransitive.ApplicationBiohypnos.props",
+      "PackagePath": "buildTransitive\\ApplicationBiohypnos.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

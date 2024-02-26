@@ -1,0 +1,128 @@
+﻿@page "/productsuggestion"
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+    #youtube{
+        min-height:100vh;
+    }
+
+</style>
+
+<section class="mt-8" style="margin-top:2rem;">
+    <div class="container border-bottom pb-5">
+        <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+         
+
+                        <p class="lead alert-info p-3" style="text-align:justify">
+                    <span class="h4">Recommendation</span><br />
+                            Based on your responses, it is suspected that you may have sleep apnea. To further evaluate, it is recommended to proceed with home sleep apnea testing.
+                            <br />
+
+
+                    Please refer to the following <a href="videolink" class="fw-bolder"> YouTube videos </a>. Once you have reviewed the education material, it is recommended that you proceed with a home sleep apnea test. If the test confirms a diagnosis of obstructive sleep apnea, 
+                    you will be given the opportunity to our direct-to-consumer PAP device and equipment marketplace.
+                            </p>
+                        
+           
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-6">
+                <!-- img slide -->
+                <img src="https://www.sleepfoundation.org/wp-content/uploads/2020/12/BioStrap-Active-Set-scaled.jpg " class="img-fluid" alt="Responsive image" />
+            </div>
+            <div class="col-md-6">
+                <div class="ps-lg-10 mt-6 mt-md-0">
+
+                    <h1 class="mb-1 mt-2">Sleep Apnea Device</h1>
+
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <a href="#" class="ms-2">(30 reviews)</a>
+                    @* <div class="fs-4 mt-3">
+                    <!-- price --><span class="fw-bold text-dark">$32</span> <span class="text-decoration-line-through text-muted">$35</span><span>
+                    <small class="fs-6 ms-2 text-danger">
+                    26%
+                    Off
+                    </small>
+                    </span>
+                    </div>*@
+
+                    <hr class="my-6">
+
+                    <div class="mb-4">
+
+
+                        <!-- input -->
+                        <div class="col-md-2">
+                            <label for="exampleFormControlInput1" class="form-label">Quantity</label>
+                            <input type="number" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="mt-4">
+                            <button type="button" class="btn btn-outline-secondary">small</button>
+                            <!-- btn --> <button type="button" class="btn btn-outline-secondary">medium</button>
+                            <!-- btn --> <button type="button" class="btn btn-outline-secondary">large</button>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <button type="button" class="btn btn-primary mt-2" style="width: 10rem;">
+                        Buy Now
+                    </button>
+
+
+                    <button type="button" class="btn btn-primary mt-2" style="width: 10rem;">
+                        Add to cart
+                    </button>
+
+
+                    <!-- hr -->
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" >
+    <div class="pt-4">
+        <h3>Product Description</h3>
+        <p>
+            Original Bluetooth Handfree with mic Wireless HandfreeWireless Bluetooth Earphones Wireless Bluetooth headset compatible with android and other devices Bluetooth earphone for games Bluetooth Neckband
+            The Bluetooth headset enables you to enjoy great sounds on-the-go.
+            Comfortable and snug fit make sure the headset stays tightly when you are out running, jogging or exercising and doing other activities.
+            The portable, user-friendly magnet design lets the headphones hang like a necklace, very easy to store into your clothing or bag, and not easy to fall off.
+            A good choice as a gift for your friends and family.+Specification:
+        </p>
+
+    </div>
+</section>
+
+
+
+
+
+@code {
+
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationState { get; set; }
+    private string? uid { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationState;
+        uid = authState.User.FindFirst("UserId")?.Value.ToString();
+
+    }
+}

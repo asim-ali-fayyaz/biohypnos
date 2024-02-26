@@ -1,0 +1,183 @@
+﻿@page "/demographic"
+@attribute [Authorize(Roles = "Patient")]
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager nm
+
+<section class="bg-light min-vh-100">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-8 offset-lg-2">
+
+                <div>
+                    <h3 class="display-6">Demographic Information</h3>
+                    <p class="lead">Please Answer the Following Questions</p>
+                </div>
+                <EditForm Model="@entDemographic" OnValidSubmit="submit">
+                    <DataAnnotationsValidator />
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="mt-3">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" @bind-Value="entDemographic.Gender" id="floatingSelect" aria-label="Floating label select example">
+                                        <option selected disabled>Select Gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Non Binary">Non Binary</option>
+                                        <option value="Genderqueer">Genderqueer</option>
+                                        <option value="Prefer Not to Say">Prefer Not to Say</option>
+                                        <option value="Others">Others</option>
+
+                                    </InputSelect>
+                                    <label for="@entDemographic.Gender">Your gender is</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-3">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" @bind-Value="entDemographic.Race" id="floatingSelect" aria-label="Floating label select example">
+                                        <option selected disabled>Select Race</option>
+                                        <option value="White Caucasian">White/Caucasian</option>
+                                        <option value="Multiracial Mixed race">Multiracial / Mixed race</option>
+                                        <option value="Black African American">Black / African American</option>
+                                        <option value="American Indian">American Indian</option>
+                                        <option value="Alaska Native">Alaska Native</option>
+                                        <option value="Hispanic Latinx">Hispanic / Latinx</option>
+                                        <option value="Native American Indigenous">Native American / Indigenous</option>
+                                        <option value="Asian Pacific Islander">Asian / Pacific Islander</option>
+                                        <option value="Prefer not to say">Prefer not to say</option>
+                                        <option value="Other">Other</option>
+                                    </InputSelect>
+                                    <label for="@entDemographic.Race">Your race is</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-3">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" @bind-Value="entDemographic.Ethnicity" id="floatingSelect" aria-label="Floating label select example">
+                                        <option selected disabled>Select Ethnicity</option>
+
+                                        <option value="American People">American</option>
+                                        <option value="European">European</option>
+                                        <option value="African">African</option>
+                                        <option value="American Indian">American Indian</option>
+                                        <option value="Asian">Asian</option>
+                                        <option value="Hispanic Latinx">Hispanic/Latinx</option>
+                                        <option value="Other">Other</option>
+                                        <option value="Prefer not to say">Prefer not to say</option>
+
+                                    </InputSelect>
+                                    <label for="@entDemographic.Ethnicity">Your ethnicity is</label>
+                                </div>
+
+                            </div>
+                            <div class="mt-3">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-floating mb-3">
+                                            <InputNumber @bind-Value="height" class="form-control" id="floatingInput"></InputNumber>
+                                            <label for="floatingInput">Enter height in inches</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating mb-3">
+                                            <InputNumber @bind-Value="weight" class="form-control" id="floatingInput" @onfocusout="calculatebmi"></InputNumber>
+                                            <label for="floatingInput">Enter weight in pounds</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-floating mb-3">
+                                            <InputNumber @bind-Value="bmi" class="form-control" id="floatingInput" disabled="true"></InputNumber>
+                                            <label for="floatingInput">Your BMI is</label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="form-floating">
+                                    <InputSelect class="form-select" @bind-Value="entDemographic.NeckSize" id="floatingSelect" aria-label="Floating label select example">
+                                        <option selected disabled>Select the neck circumference</option>
+
+                                        <option value="13">13</option>
+                                        <option value="13.5">13.5</option>
+                                        <option value="14">14</option>
+                                        <option value="14.5">14.5</option>
+                                        <option value="15">15</option>
+                                        <option value="15.5">15.5</option>
+                                        <option value="16">16</option>
+                                        <option value="16.5">16.5</option>
+                                        <option value="17">17</option>
+                                        <option value="17.5">17.5</option>
+                                        <option value="18">18.5</option>
+
+
+
+                                    </InputSelect>
+                                    <label for="@entDemographic.NeckSize">Your neck circumference is</label>
+                                </div>
+
+                            </div>
+
+                            <div class="mt-5">
+                                <button class="btn btn-primary btn-lg" @onclick="submit">
+                                    Save Demographic
+                                </button>
+                            </div>
+
+                        </div>
+                        
+
+                    </div>
+
+                </EditForm>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+    @code {
+    [CascadingParameter]
+    private Task<AuthenticationState>? authenticationState { get; set; }
+    public EntDemographic entDemographic = new EntDemographic();
+    public double height { get; set; }
+    public double weight { get; set; }
+
+    public double bmi { get; set; }
+    public double heightinmeter { get; set; }
+
+    private string? uid { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationState;
+        uid = authState.User.FindFirst("UserId")?.Value.ToString();
+
+    }
+
+    public void calculatebmi()
+    {
+
+        //inches = weight * 703;
+        heightinmeter = height * height; //(height * 0.3048F);
+        bmi = (weight / heightinmeter) * 703F;
+        //StateHasChanged();
+    }
+    public void submit()
+    {
+        if (!string.IsNullOrEmpty(uid))
+        {
+            entDemographic.UserId = uid;
+            entDemographic.BMI = bmi.ToString();
+            int i = DalCRUD.SaveDemographic(entDemographic);
+            if (i > 0)
+            {
+                nm.NavigateTo("/pasthistories");
+            }
+
+        }
+
+    }
+    }

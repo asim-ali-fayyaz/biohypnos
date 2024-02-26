@@ -1,0 +1,17 @@
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\ApplicationBiohypnos.exe
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\appsettings.json
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\ApplicationBiohypnos.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\ApplicationBiohypnos.deps.json
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\ApplicationBiohypnos.runtimeconfig.json
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\ApplicationBiohypnos.pdb
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\System.Data.SqlClient.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\DAL.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\Entites.dll
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\DAL.pdb
+D:\WebProjects\Biohypons\ApplicationBiohypnos\obj\Release\net7.0\PubTmp\Out\Entites.pdb

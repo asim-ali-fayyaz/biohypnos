@@ -1,0 +1,15 @@
+D:\WebProjects\Biohypons\DAL\bin\Debug\net7.0\DAL.deps.json
+D:\WebProjects\Biohypons\DAL\bin\Debug\net7.0\DAL.dll
+D:\WebProjects\Biohypons\DAL\bin\Debug\net7.0\DAL.pdb
+D:\WebProjects\Biohypons\DAL\bin\Debug\net7.0\Entites.dll
+D:\WebProjects\Biohypons\DAL\bin\Debug\net7.0\Entites.pdb
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.csproj.CopyComplete
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.dll
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\refint\DAL.dll
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\DAL.pdb
+D:\WebProjects\Biohypons\DAL\obj\Debug\net7.0\ref\DAL.dll

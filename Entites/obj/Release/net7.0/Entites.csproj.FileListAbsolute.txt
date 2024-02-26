@@ -1,0 +1,12 @@
+D:\WebProjects\Biohypons\Entites\bin\Release\net7.0\Entites.deps.json
+D:\WebProjects\Biohypons\Entites\bin\Release\net7.0\Entites.dll
+D:\WebProjects\Biohypons\Entites\bin\Release\net7.0\Entites.pdb
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.csproj.AssemblyReference.cache
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.GeneratedMSBuildEditorConfig.editorconfig
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.AssemblyInfoInputs.cache
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.AssemblyInfo.cs
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.csproj.CoreCompileInputs.cache
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.dll
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\refint\Entites.dll
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\Entites.pdb
+D:\WebProjects\Biohypons\Entites\obj\Release\net7.0\ref\Entites.dll

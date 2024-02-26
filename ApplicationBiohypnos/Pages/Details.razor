@@ -1,0 +1,132 @@
+﻿@page "/details/{uid}"
+
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card text-dark" style="background-color:white;">
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <th><u>Patient Name : @entDetails.FirstName @entDetails.LastName</u></th>
+                        </tr>
+                        <tr>
+                            <td>Patient Id</td>
+                            <td>
+                                @entDetails.UserId
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>@entDetails.Gender</td>
+                        </tr>
+                        <tr>
+                            <td>Race</td>
+                            <td>@entDetails.Race</td>
+                        </tr>
+                        <tr>
+                            <td>Ethnicity</td>
+                            <td>@entDetails.Ethnicity</td>
+                        </tr>
+                        <tr>
+                            <td>Neck Size</td>
+                            <td>@entDetails.NeckSize</td>
+                        </tr>
+                        <tr>
+                            <td>BMI</td>
+                            <td>@entDetails.BMI</td>
+                        </tr>
+                    </table>
+
+                    <table class="table table-bordered">
+                        <tr>
+                            <th colspan="2">Past History</th>
+                        </tr>
+                        <tr>
+                            <td>Medical Condition</td>
+                            <td class="text-primary">@entDetails.MedicalCondition</td>
+                        </tr>
+                        <tr>
+                            <td>Past Surgery</td>
+                            <td class="text-primary">@entDetails.PastSurgery</td>
+                        </tr>
+                        <tr>
+                            <td>Past Surgery Details</td>
+                            <td class="text-primary">@entDetails.PastSurgeryDetails</td>
+                        </tr>
+                        <tr>
+                            <td>Smoke</td>
+                            <td class="text-primary">@entDetails.Smoke</td>
+                        </tr>
+                        <tr>
+                            <td>Alcohol Use</td>
+                            <td class="text-primary">@entDetails.AlcoholUse</td>
+                        </tr>
+                        <tr>
+                            <td>Illegal Drug Use</td>
+                            <td class="text-primary">@entDetails.IllegalDrugUse</td>
+                        </tr>
+               
+                        <tr>
+                            <th colspan="2">Expert Evaluation</th>
+                        </tr>
+                        <tr>
+                            <td>Sitting And Reading</td>
+                            <td class="text-primary">@entDetails.SittingAndReading</td>
+                        </tr>
+                        <tr>
+                            <td>Sitting And Watching TV</td>
+                            <td class="text-primary">@entDetails.SittingAndWatchingTV</td>
+                        </tr>
+                        <tr>
+                            <td>Sitting Inactive In Public</td>
+                            <td class="text-primary">@entDetails.SittingInactiveInPublic</td>
+                        </tr>
+                        <tr>
+                            <td>As a Passenger Car</td>
+                            <td class="text-primary">@entDetails.AsaPassengerCar</td>
+                        </tr>
+                        <tr>
+                            <td>Lying Down</td>
+                            <td class="text-primary">@entDetails.LyingDown</td>
+                        </tr>
+                        <tr>
+                            <td>Sitting Talking</td>
+                            <td class="text-primary">@entDetails.SittingTalking</td>
+                        </tr>
+                        <tr>
+                            <td>Sitting Quietly</td>
+                            <td class="text-primary">@entDetails.SittingQuietfly</td>
+                        </tr>
+                        <tr>
+                            <td>While Stopped</td>
+                            <td class="text-primary">@entDetails.WhileStopped</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@code {
+
+
+    [Parameter] public string? uid { get; set; }
+
+    private EntDetails entDetails = new EntDetails();
+
+
+    protected override void OnInitialized()
+    {
+        entDetails = DalCRUD.GetUserAccountById(uid);
+    }
+
+}

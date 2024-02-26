@@ -1,0 +1,88 @@
+﻿@page "/category"
+@attribute [Authorize(Roles = "Patient")]
+@inject NavigationManager nm;
+<PageTitle>Category</PageTitle>
+
+<section class="bg-light min-vh-100 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-lg-2">
+                <div>
+                    <h3 class="display-6">Your Concern</h3>
+                    <p class="lead">Please select one from the following categories</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mt-4" >
+                        <div class="card text-center" @onclick="GotoExpertEvaluation" style="cursor:pointer;">
+                            <div class="card-body">
+                                <b class="text-primary">Seeking Expert Evaluation</b>
+                              
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 mt-4">
+                        <div class="card text-center" @onclick="GotoSleepapnea" style="cursor:pointer;">
+                            <div class="card-body">
+                                <b class="text-primary">Sleep Apnea</b>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                   @* <div class="col-md-12 mt-4">
+                        <div class="card" @onclick="GotoTobacco" style="cursor:pointer">
+                            <div class="card-body">
+                                <h5 class="text-primary">3. Tobacco Cessation</h5>
+                                <p>I am concerned about the Tobacco Cessation.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-12 mt-4">
+                            <div class="card" @onclick="GotoLegmoments" style="cursor:pointer">
+                                <div class="card-body">
+                                    <h5 class="text-primary">4. Leg Movements</h5>
+                                    <p>I am concerned about the Leg Movements.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 mt-4">
+                            <div class="card" @onclick="GotoSleepiness" style="cursor:pointer">
+                                <div class="card-body">
+                                    <h5 class="text-primary">5. Excessive Sleepines</h5>
+                                    <p>I am concerned about the Excessive Sleepiness.</p>
+                                </div>
+                            </div>
+
+                        </div>*@
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+
+    private void GotoExpertEvaluation()
+    {
+        nm.NavigateTo("expertevaluation", true);
+    }
+    private void GotoSleepapnea()
+    {
+        nm.NavigateTo("sleepapnea", true);
+    }
+    private void GotoSleepiness()
+    {
+        nm.NavigateTo("sleepiness", true);
+    }
+    private void GotoTobacco()
+    {
+        nm.NavigateTo("tobacco", true);
+    }
+    private void GotoLegmoments()
+    {
+        nm.NavigateTo("legmoments", true);
+    }
+}

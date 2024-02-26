@@ -1,0 +1,117 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+<PageTitle>BioHypnos</PageTitle>
+
+
+<section style="background-image:url(/images/sleep2.jpeg); background-position:right; background-attachment:fixed; background-repeat:no-repeat; background-size:cover; min-height:100vh">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="d-flex justify-content-center  align-items-center  min-vh-100">
+                    <div class="p-5 glasseffects">
+                        <img src="images/logo.png" width="220" />
+                        <p class="fw-bolder" style="font-size:2rem;">
+                            We use evidenced based tools to understand your sleep related issues
+                            and determine how best to treat them.
+                        </p>
+                        <p class="text-dark" style="font-size:1.5rem;">
+                            <span class="text-primary">Start Free Assessment. </span>This assessment may take up to<span class="text-primary"> 15 minutes </span>of your time.</p>
+                        <div>
+                            <button type="button" class="btn btn-danger btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                Start Assessment
+                            </button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+           
+        </div>
+    </div>
+</section>
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Age Assessment !</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="lead">Are you 18 years old?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @onclick="OnNo">No</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Disclaimer">
+                    Yes
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <!-- Button trigger modal -->
+  
+
+    <!-- Modal -->
+    <div class="modal fade" id="Disclaimer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="Disclaimer">Disclaimer</h1>                 
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                   
+                </div>
+                <div class="modal-body">
+                    <p class="small text-danger">
+                        <strong>Assessment Exclusion Criteria</strong><br />If you have any of the following conditions, the you will not be allowed to complete the virtual assessment and it is recommended that you seek in person consultation with a sleep practitioner.
+                    </p>
+                    <div class="container bg-light p-4">
+                        <h5>Do you have any of the following conditions?</h5>
+                        <ol>
+                            <li>Neuromuscular disorder (such as Guillan Barre Syndrome, Myasthenia Gravis, Amyotrophic lateral sclerosis)</li>
+                            <li>Neurocognitive disorder (such as dementia, Alzheimer's disease, Parkinson’s disease)</li>
+                            <li>History of stroke (cerebrovascular accident)</li>
+                            <li>Coronary artery disease</li>
+                            <li>Congestive Heart failure</li>
+                            <li>Atrial fibrillation</li>
+                            <li>BMI >50</li>
+                            <li>Spinal cord injury</li>
+                            <li>Thoracic surgery</li>
+                            <li>Congenital heart disease</li>
+                            <li>COPD or other chronic lung disease</li>
+                            <li>Pulmonary hypertension</li>
+                            <li>Chronic use of controlled substances (opiates, benzodiazepines, ADHD meds)</li>
+                            <li>History of PTSD</li>
+                            <li>Illicit drug use (specifically illegal use of drugs such as cocaine, LSD, heroin or fentanyl)</li>
+
+                        </ol>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="suggestions" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</a>
+                    <a href="javascript:void(0)" class="btn btn-primary" data-bs-dismiss="modal" @onclick="OnYes">Proceed</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@code {
+
+
+    private void OnNo()
+    {
+        NavigationManager.NavigateTo("underage", true);
+    }
+    private void OnYes()
+    {
+        NavigationManager.NavigateTo("login", true);
+    }
+
+}
