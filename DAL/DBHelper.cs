@@ -12,7 +12,6 @@ namespace DAL
         public static SqlConnection GetConnection()
         {
              //return new SqlConnection("Data Source=DESKTOP-19THQ4O;Initial Catalog=db_Biohypons;Integrated Security=True");
-            //return new SqlConnection("Data Source=65.108.97.18;Initial Catalog=db_biohypnos; User ID=user_biohypnos; Password=!M6zw013e");
             return new SqlConnection("Data Source=66.165.248.146;Initial Catalog=db_biohypnos; User ID=user_biohypnos; Password=j!5T0n33k");
         }
     }
